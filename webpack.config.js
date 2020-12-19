@@ -23,25 +23,25 @@ const config = {
         use: [{
           loader: 'file-loader',
           options: {
-            name(file) {
+            name (file) {
               return '[path][name].[ext]'
             },
-            publicPath: function (url) {
-              return url.replace('../', '/assets/')
+            publicPath: function(url) {
+                return url.replace('../', '/assets/')
             },
-          }
-        },
+          }  
+        }, 
         {
           loader: 'image-webpack-loader',
         },
-        ],
+      ],
       },
     ],
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
+        $: "jquery",
+        jQuery: "jquery"
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: "static"
@@ -61,7 +61,7 @@ const config = {
         destination: path.join("assets", "icons")
       }]
     })
-  ],
+],
   mode: "development"
 };
 
